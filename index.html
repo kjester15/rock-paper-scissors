@@ -21,11 +21,33 @@
             }
         };
         console.log(getComputerChoice())
+    
         function oneRound (playerSelection, computerSelection) {
             let playerLower = playerSelection.toLowerCase();
-
-            let
+            if (playerLower == "rock" && computerSelection == "paper") {
+                return "You lose! Paper beats Rock"
+            }
+            else if (playerLower == "rock" && computerSelection == "scissors") {
+                return "You win! Rock beats Scissors"
+            }   
+            else if (playerLower == "paper" && computerSelection == "rock") {
+                return "You win! Paper beats Rock"
+            }
+            else if (playerLower == "paper" && computerSelection == "scissors") {
+                return "You lose! Scissors beats Paper"
+            }
+            else if (playerLower == "scissors" && computerSelection == "rock") {
+                return "You lose! Rock beats Scissors"
+            }
+            else if (playerLower == "scissors" && computerSelection == "paper") {
+                return "You win! Scissors beats Paper"
+            }
+            else {
+                return "It's a tie!"
+            }
         };
+
+        console.log(oneRound("rock",getComputerChoice()))
         
     </script>
 </body>
