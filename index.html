@@ -10,9 +10,22 @@
     <script>
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
-            return choice;
+            if (choice == 1) {
+                return "rock"
+            }
+            else if (choice == 2) {
+                return "paper"
+            }
+            else {
+                return "scissors"
+            }
         };
-        
+        console.log(getComputerChoice())
+        function oneRound (playerSelection, computerSelection) {
+            let playerLower = playerSelection.toLowerCase();
+
+            let
+        };
         
     </script>
 </body>
