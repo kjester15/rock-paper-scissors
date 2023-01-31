@@ -27,32 +27,32 @@
             let playerSelection = prompt("Rock, Paper, or Scissors?")
             let playerLower = playerSelection.toLowerCase();
             if (playerLower == "rock" && computerSelection == "paper") {
-                return "You lose! Paper beats Rock"
+                return "lose"
             }
             else if (playerLower == "rock" && computerSelection == "scissors") {
-                return "You win! Rock beats Scissors"
+                return "win"
             }   
             else if (playerLower == "paper" && computerSelection == "rock") {
-                return "You win! Paper beats Rock"
+                return "win"
             }
             else if (playerLower == "paper" && computerSelection == "scissors") {
-                return "You lose! Scissors beats Paper"
+                return "lose"
             }
             else if (playerLower == "scissors" && computerSelection == "rock") {
-                return "You lose! Rock beats Scissors"
+                return "lose"
             }
             else if (playerLower == "scissors" && computerSelection == "paper") {
-                return "You win! Scissors beats Paper"
+                return "win"
             }
             else {
-                return "It's a tie!"
+                return "tie"
             }
         };
 
         function game() {
             let playerScore = 0
             let computerScore = 0
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 4; i++) {
                 roundWinner = oneRound(getComputerChoice())
                 if (roundWinner.includes("win")) {
                     playerScore += 1
