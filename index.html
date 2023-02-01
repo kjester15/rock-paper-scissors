@@ -23,7 +23,7 @@
     
         let playerChoice = prompt("Rock, Paper, or Scissors?")
 
-        function oneRound (computerSelection) {
+        function playRound (computerSelection) {
             let playerSelection = prompt("Rock, Paper, or Scissors?")
             let playerLower = playerSelection.toLowerCase();
             if (playerLower == "rock" && computerSelection == "paper") {
@@ -48,28 +48,6 @@
                 return "tie"
             }
         };
-
-        function game() {
-            let playerScore = 0
-            let computerScore = 0
-            for (let i = 0; i < 4; i++) {
-                roundWinner = oneRound(getComputerChoice())
-                if (roundWinner.includes("win")) {
-                    playerScore += 1
-                }
-                else if (roundWinner.includes("lose")) {
-                    computerScore += 1
-                }
-            }
-            
-            if (playerScore > computerScore) {
-                return "You win the game!"
-            }
-            else {
-                return "The computer wins the game!"
-            }
-        }
-        console.log(game())
         
     </script>
 </body>
