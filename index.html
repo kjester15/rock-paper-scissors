@@ -7,23 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
     <script>
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
-            if (choice == 1) {
-                return "rock"
-            }
-            else if (choice == 2) {
-                return "paper"
-            }
-            else {
-                return "scissors"
+            switch(choice) {
+                case 1:
+                    return 'rock';
+                    break;
+                case 2:
+                    return 'paper';
+                    break;
+                case 3:
+                    return 'scissors';
+                    break;
             }
         };
-    
-        let playerChoice = prompt("Rock, Paper, or Scissors?")
-
-        function playRound (computerSelection) {
+        
+        function playRound (e, computerSelection) {
             let playerSelection = prompt("Rock, Paper, or Scissors?")
             let playerLower = playerSelection.toLowerCase();
             if (playerLower == "rock" && computerSelection == "paper") {
