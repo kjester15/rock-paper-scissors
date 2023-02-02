@@ -14,10 +14,22 @@
     <button id="scissors">Scissors</button>
     <div class="computer">Computer's Choice: </div>
     <div class="winner"></div>
+    <div class="game-over"></div>
     
     <script>
         let playerScore = 0;
         let computerScore = 0;
+
+        if (playerScore == 5 || computerScore == 5) {
+            document.querySelector('.winner').innerHTML = "Game over!";
+        }
+
+        const buttons = Array.from(document.querySelectorAll('button'));
+        buttons.forEach(button => button.addEventListener('click', playRound));
+
+        if (playerScore === 5 || computerScore === 5) {
+            document.querySelector('.game-over').innerHTML = "Game over!";
+        }
         
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
@@ -62,7 +74,7 @@
                 document.querySelector('.winner').innerHTML = "You lose!";
                 computerScore += 1;
             }
-            else if (playerSelection == "scissors" && computerSelection == "paper") {
+            else if (playerSelection == "scissors" && computerLower == "paper") {
                 document.querySelector('.winner').innerHTML = "You win!";
                 playerScore += 1;
             }
@@ -73,12 +85,6 @@
             document.querySelector('.computer-score').innerHTML = `Computer: ${computerScore}`;
             return;
         };
-
-        
-        
-        const buttons = Array.from(document.querySelectorAll('button'));
-        buttons.forEach(button => button.addEventListener('click', playRound));
-        
     </script>
 </body>
 </html>
