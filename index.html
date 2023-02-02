@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+    <button>Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
     <script>
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
@@ -26,31 +26,41 @@
             }
         };
         
-        function playRound (e, computerSelection) {
-            let playerSelection = prompt("Rock, Paper, or Scissors?")
+        function playRound (computerSelection) {
+            let playerSelection = 'rock'; // update
             let playerLower = playerSelection.toLowerCase();
             if (playerLower == "rock" && computerSelection == "paper") {
+                console.log("lose")
                 return "lose"
             }
             else if (playerLower == "rock" && computerSelection == "scissors") {
+                console.log("win")
                 return "win"
             }   
             else if (playerLower == "paper" && computerSelection == "rock") {
+                console.log("win")
                 return "win"
             }
             else if (playerLower == "paper" && computerSelection == "scissors") {
+                console.log("lose")
                 return "lose"
             }
             else if (playerLower == "scissors" && computerSelection == "rock") {
+                console.log("lose")
                 return "lose"
             }
             else if (playerLower == "scissors" && computerSelection == "paper") {
+                console.log("win")
                 return "win"
             }
             else {
+                console.log("tie")
                 return "tie"
             }
         };
+        
+        const buttons = Array.from(document.querySelectorAll('button'));
+        buttons.forEach(button => button.addEventListener('click', playRound));
         
     </script>
 </body>
