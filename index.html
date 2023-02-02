@@ -29,35 +29,34 @@
         };
         
         function playRound () {
-            let playerSelection = this.id;
-            let playerLower = playerSelection.toLowerCase();
+            let playerSelection = this.id.toLowerCase();
             let computerSelection = getComputerChoice();
             let computerLower = computerSelection.toLowerCase();
             let compChoice = document.querySelector('.computer');
             document.querySelector('.computer').innerHTML = "Computer's Choice: ";
             compChoice.append(computerSelection);
             
-            if (playerLower == "rock" && computerLower == "paper") {
+            if (playerSelection == "rock" && computerLower == "paper") {
                 document.querySelector('.winner').innerHTML = "You lose!";
                 return;
             }
-            else if (playerLower == "rock" && computerLower == "scissors") {
+            else if (playerSelection == "rock" && computerLower == "scissors") {
                 document.querySelector('.winner').innerHTML = "You win!";
                 return;
             }   
-            else if (playerLower == "paper" && computerLower == "rock") {
+            else if (playerSelection == "paper" && computerLower == "rock") {
                 document.querySelector('.winner').innerHTML = "You win!";
                 return;
             }
-            else if (playerLower == "paper" && computerLower == "scissors") {
+            else if (playerSelection == "paper" && computerLower == "scissors") {
                 document.querySelector('.winner').innerHTML = "You lose!";
                 return;
             }
-            else if (playerLower == "scissors" && computerLower == "rock") {
+            else if (playerSelection == "scissors" && computerLower == "rock") {
                 document.querySelector('.winner').innerHTML = "You lose!";
                 return;
             }
-            else if (playerLower == "scissors" && computerSelection == "paper") {
+            else if (playerSelection == "scissors" && computerSelection == "paper") {
                 document.querySelector('.winner').innerHTML = "You win!";
                 return;
             }
