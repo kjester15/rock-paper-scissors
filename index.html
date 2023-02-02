@@ -17,13 +17,13 @@
             let choice = Math.floor(Math.random()*3)+1
             switch(choice) {
                 case 1:
-                    return 'rock';
+                    return 'Rock';
                     break;
                 case 2:
-                    return 'paper';
+                    return 'Paper';
                     break;
                 case 3:
-                    return 'scissors';
+                    return 'Scissors';
                     break;
             }
         };
@@ -32,37 +32,38 @@
             let playerSelection = this.id;
             let playerLower = playerSelection.toLowerCase();
             let computerSelection = getComputerChoice();
+            let computerLower = computerSelection.toLowerCase();
             let compChoice = document.querySelector('.computer');
             document.querySelector('.computer').innerHTML = "Computer's Choice: ";
             compChoice.append(computerSelection);
             
-            if (playerLower == "rock" && computerSelection == "paper") {
-                console.log("lose")
-                return "lose"
+            if (playerLower == "rock" && computerLower == "paper") {
+                document.querySelector('.winner').innerHTML = "You lose!";
+                return;
             }
-            else if (playerLower == "rock" && computerSelection == "scissors") {
-                console.log("win")
-                return "win"
+            else if (playerLower == "rock" && computerLower == "scissors") {
+                document.querySelector('.winner').innerHTML = "You win!";
+                return;
             }   
-            else if (playerLower == "paper" && computerSelection == "rock") {
-                console.log("win")
-                return "win"
+            else if (playerLower == "paper" && computerLower == "rock") {
+                document.querySelector('.winner').innerHTML = "You win!";
+                return;
             }
-            else if (playerLower == "paper" && computerSelection == "scissors") {
-                console.log("lose")
-                return "lose"
+            else if (playerLower == "paper" && computerLower == "scissors") {
+                document.querySelector('.winner').innerHTML = "You lose!";
+                return;
             }
-            else if (playerLower == "scissors" && computerSelection == "rock") {
-                console.log("lose")
-                return "lose"
+            else if (playerLower == "scissors" && computerLower == "rock") {
+                document.querySelector('.winner').innerHTML = "You lose!";
+                return;
             }
             else if (playerLower == "scissors" && computerSelection == "paper") {
-                console.log("win")
-                return "win"
+                document.querySelector('.winner').innerHTML = "You win!";
+                return;
             }
             else {
-                console.log("tie")
-                return "tie"
+                document.querySelector('.winner').innerHTML = "It's a tie!";
+                return;
             }
         };
         
