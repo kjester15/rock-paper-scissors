@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
     <script>
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
@@ -27,7 +27,7 @@
         };
         
         function playRound (computerSelection) {
-            let playerSelection = 'rock'; // update
+            let playerSelection = this.id;
             let playerLower = playerSelection.toLowerCase();
             if (playerLower == "rock" && computerSelection == "paper") {
                 console.log("lose")
