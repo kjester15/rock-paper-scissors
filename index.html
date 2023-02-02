@@ -32,6 +32,10 @@
             let playerSelection = this.id;
             let playerLower = playerSelection.toLowerCase();
             let computerSelection = getComputerChoice();
+            let compChoice = document.querySelector('.computer');
+            document.querySelector('.computer').innerHTML = "Computer's Choice: ";
+            compChoice.append(computerSelection);
+            
             if (playerLower == "rock" && computerSelection == "paper") {
                 console.log("lose")
                 return "lose"
