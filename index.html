@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="score">SCORE: You: 0 Computer: 0 </div>
+    <div class="player-score">You: </div>
+    <div class="computer-score">Computer: </div>
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
     <div class="computer">Computer's Choice: </div>
     <div class="winner"></div>
+    
     <script>
         function getComputerChoice () {
             let choice = Math.floor(Math.random()*3)+1
@@ -28,8 +32,8 @@
             }
         };
         
-        function playRound () {
-            let playerSelection = this.id.toLowerCase();
+        function playRound (playerSelection) {
+            // let playerSelection = this.id.toLowerCase();
             let computerSelection = getComputerChoice();
             let computerLower = computerSelection.toLowerCase();
             let compChoice = document.querySelector('.computer');
@@ -38,36 +42,55 @@
             
             if (playerSelection == "rock" && computerLower == "paper") {
                 document.querySelector('.winner').innerHTML = "You lose!";
-                return;
+                return 'lose';
             }
             else if (playerSelection == "rock" && computerLower == "scissors") {
                 document.querySelector('.winner').innerHTML = "You win!";
-                return;
+                return 'win';
             }   
             else if (playerSelection == "paper" && computerLower == "rock") {
                 document.querySelector('.winner').innerHTML = "You win!";
-                return;
+                return 'win';
             }
             else if (playerSelection == "paper" && computerLower == "scissors") {
                 document.querySelector('.winner').innerHTML = "You lose!";
-                return;
+                return 'lose';
             }
             else if (playerSelection == "scissors" && computerLower == "rock") {
                 document.querySelector('.winner').innerHTML = "You lose!";
-                return;
+                return 'lose';
             }
             else if (playerSelection == "scissors" && computerSelection == "paper") {
                 document.querySelector('.winner').innerHTML = "You win!";
-                return;
+                return 'win';
             }
             else {
                 document.querySelector('.winner').innerHTML = "It's a tie!";
-                return;
+                return 'tie';
             }
+            
         };
+
+        function playGame () {
+            let playerScore = 0;
+            let computerScore = 0;
+            let playerSelection = this.id.toLowerCase();
+            let result = "";
+            while (playerScore < 5 || computerScore < 5) {
+                let result = playRound(playerSelection);
+                if (result == 'win') {
+                    playerScore += 1;
+                }
+                else if (result == 'lose') {
+                    computerScore += 1;
+                }
+                document.querySelector('.score').innerHTML = `SCORE: You: ${playerScore} Computer: ${computerScore}`;
+            }
+            
+        }
         
         const buttons = Array.from(document.querySelectorAll('button'));
-        buttons.forEach(button => button.addEventListener('click', playRound));
+        buttons.forEach(button => button.addEventListener('click', playGame));
         
     </script>
 </body>
