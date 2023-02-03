@@ -33,7 +33,7 @@ function playRound () {
     let computerSelection = getComputerChoice();
     let computerLower = computerSelection.toLowerCase();
     let compChoice = document.querySelector('.computer');
-    document.querySelector('.computer').innerHTML = "Computer's Choice: ";
+    document.querySelector('.computer').innerHTML = "COMPUTER'S CHOICE: ";
     compChoice.append(computerSelection);
 
     if ((playerSelection == "rock" && computerLower == "paper") || 
@@ -52,9 +52,9 @@ function playRound () {
         document.querySelector('.winner').innerHTML = "It's a tie!";
     }
     round += 1;
-    document.querySelector('.rounds').innerHTML = `Round: ${round}`;
-    document.querySelector('.player-score').innerHTML = `You: ${playerScore}`;
-    document.querySelector('.computer-score').innerHTML = `Computer: ${computerScore}`;
+    document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
+    document.querySelector('.player-score').innerHTML = `YOU: ${playerScore}`;
+    document.querySelector('.computer-score').innerHTML = `COMPUTER: ${computerScore}`;
     continueGame();
     return;
 };
