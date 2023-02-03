@@ -4,7 +4,6 @@ let round = 0;
 
 const buttons = Array.from(document.querySelectorAll('.button'));
 buttons.forEach(button => button.addEventListener('click', playRound));
-// document.querySelector('#refresh').disabled = true;
 document.querySelector('#refresh').addEventListener('click', refreshPage);
 
 function refreshPage() {
@@ -22,7 +21,8 @@ function continueGame() {
             else {
                 document.querySelector('.game-over').innerHTML = "GAME OVER YOU LOSE!";
             }
-            document.querySelector('#refresh').disabled = false;
+            document.querySelector('#refresh').style.fontSize = '25px';
+            document.querySelector('#refresh').innerHTML = 'PLAY AGAIN?';
             return;
         }
     }

@@ -15,6 +15,7 @@ body {
     justify-content: space-around;
     margin-top: 20px;
     flex: 1;
+    font-size: 20px;
 }
 
 .rounds, .pick {
@@ -71,4 +72,10 @@ img {
 
 #refresh {
     align-self: center;
+    margin: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
 }
