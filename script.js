@@ -16,10 +16,10 @@ function continueGame() {
             buttons.forEach(button => button.disabled = true);
             document.querySelector('.button').disabled = true;
             if (playerScore > computerScore) {
-                document.querySelector('.game-over').innerHTML = "CONGRATS YOU WIN!";
+                document.querySelector('.game-over').innerHTML = "CONGRATS! YOU WIN!";
             }
             else {
-                document.querySelector('.game-over').innerHTML = "GAME OVER YOU LOSE!";
+                document.querySelector('.game-over').innerHTML = "GAME OVER! YOU LOSE!";
             }
             document.querySelector('#refresh').style.fontSize = '25px';
             document.querySelector('#refresh').innerHTML = 'PLAY AGAIN?';
