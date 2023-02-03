@@ -38,7 +38,7 @@ body {
     flex: 1;
 }
 
-button {
+.button {
     flex: 1;
     margin: 30px;
     max-width: 250px;
@@ -67,4 +67,8 @@ img {
 
 .game-over {
     font-weight: 700;
+}
+
+#refresh {
+    align-self: center;
 }

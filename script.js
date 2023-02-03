@@ -2,8 +2,9 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 
-const buttons = Array.from(document.querySelectorAll('button'));
+const buttons = Array.from(document.querySelectorAll('.button'));
 buttons.forEach(button => button.addEventListener('click', playRound));
+document.querySelector('#refresh').disabled = true;
 
 function continueGame() {
     if (round >= 5) {
@@ -11,6 +12,7 @@ function continueGame() {
             buttons.forEach(button => button.disabled = true);
             document.querySelector('.button').disabled = true;
             document.querySelector('.game-over').innerHTML = "GAME OVER! PLAY AGAIN?";
+            document.querySelector('#refresh').disabled = false;
             return;
         }
     }
