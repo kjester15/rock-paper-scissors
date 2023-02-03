@@ -5,13 +5,15 @@ let round = 0;
 const buttons = Array.from(document.querySelectorAll('button'));
 buttons.forEach(button => button.addEventListener('click', playRound));
 
-if ((round < 5) && (playerScore != computerScore)) {
-    document.querySelector('.game-over').innerHTML = "Who will win!";
-}
-else {
-    buttons.forEach(button => button.disabled = true) ;
-    document.querySelector('.button').disabled = true;
-    document.querySelector('.game-over').innerHTML = "Game over!";
+function continueGame() {
+    if (round >= 5) {
+        if (playerScore != computerScore) {
+            buttons.forEach(button => button.disabled = true);
+            document.querySelector('.button').disabled = true;
+            document.querySelector('.game-over').innerHTML = "Game over!";
+            return;
+        }
+    }
 }
 
 function getComputerChoice () {
@@ -53,5 +55,6 @@ function playRound () {
     document.querySelector('.rounds').innerHTML = `Round: ${round}`;
     document.querySelector('.player-score').innerHTML = `You: ${playerScore}`;
     document.querySelector('.computer-score').innerHTML = `Computer: ${computerScore}`;
+    continueGame();
     return;
 };
