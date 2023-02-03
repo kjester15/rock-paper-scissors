@@ -11,7 +11,12 @@ function continueGame() {
         if (playerScore != computerScore) {
             buttons.forEach(button => button.disabled = true);
             document.querySelector('.button').disabled = true;
-            document.querySelector('.game-over').innerHTML = "GAME OVER! PLAY AGAIN?";
+            if (playerScore > computerScore) {
+                document.querySelector('.game-over').innerHTML = "CONGRATS YOU WIN!";
+            }
+            else {
+                document.querySelector('.game-over').innerHTML = "GAME OVER YOU LOSE!";
+            }
             document.querySelector('#refresh').disabled = false;
             return;
         }
