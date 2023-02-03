@@ -4,7 +4,12 @@ let round = 0;
 
 const buttons = Array.from(document.querySelectorAll('.button'));
 buttons.forEach(button => button.addEventListener('click', playRound));
-document.querySelector('#refresh').disabled = true;
+// document.querySelector('#refresh').disabled = true;
+document.querySelector('#refresh').addEventListener('click', refreshPage);
+
+function refreshPage() {
+    document.location.reload();
+}
 
 function continueGame() {
     if (round >= 5) {
