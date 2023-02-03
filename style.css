@@ -22,6 +22,15 @@ body {
     margin: 10px;
 }
 
+.rounds {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.pick {
+    font-size: 28px;
+}
+
 .button-container {
     display: flex;
     margin: 20px;
