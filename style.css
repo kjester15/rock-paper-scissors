@@ -41,7 +41,7 @@ button {
     margin: 30px;
 }
 
-.computer {
+.computer, .winner, .game-over {
     align-self: center;
+    margin: 5px;
 }
-

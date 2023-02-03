@@ -10,7 +10,7 @@ function continueGame() {
         if (playerScore != computerScore) {
             buttons.forEach(button => button.disabled = true);
             document.querySelector('.button').disabled = true;
-            document.querySelector('.game-over').innerHTML = "Game over!";
+            document.querySelector('.game-over').innerHTML = "GAME OVER! PLAY AGAIN?";
             return;
         }
     }
@@ -39,17 +39,17 @@ function playRound () {
     if ((playerSelection == "rock" && computerLower == "paper") || 
         (playerSelection == "paper" && computerLower == "scissors") || 
         (playerSelection == "scissors" && computerLower == "rock")) {
-            document.querySelector('.winner').innerHTML = "You lose!";
+            document.querySelector('.winner').innerHTML = "TOUGH LUCK!";
             computerScore += 1;
     }
     else if ((playerSelection == "rock" && computerLower == "scissors") || 
         (playerSelection == "paper" && computerLower == "rock") || 
         (playerSelection == "scissors" && computerLower == "paper")) {
-            document.querySelector('.winner').innerHTML = "You win!";
+            document.querySelector('.winner').innerHTML = "NICE ONE!";
             playerScore += 1;
     }   
     else {
-        document.querySelector('.winner').innerHTML = "It's a tie!";
+        document.querySelector('.winner').innerHTML = "IT'S A DRAW!";
     }
     round += 1;
     document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
