@@ -1,6 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
-let round = 0;
+let round = 1;
 
 const buttons = Array.from(document.querySelectorAll('.button'));
 buttons.forEach(button => button.addEventListener('click', playRound));
@@ -11,15 +11,16 @@ function refreshPage() {
 }
 
 function continueGame() {
-    if (round >= 5) {
+    if (round >= 6) {
         if (playerScore != computerScore) {
             buttons.forEach(button => button.disabled = true);
             document.querySelector('.button').disabled = true;
+            document.querySelector('.rounds').innerHTML = "GAME OVER";
             if (playerScore > computerScore) {
                 document.querySelector('.game-over').innerHTML = "CONGRATS! YOU WIN!";
             }
             else {
-                document.querySelector('.game-over').innerHTML = "GAME OVER! YOU LOSE!";
+                document.querySelector('.game-over').innerHTML = "YOU LOSE!";
             }
             document.querySelector('#refresh').style.fontSize = '25px';
             document.querySelector('#refresh').innerHTML = 'PLAY AGAIN?';
@@ -41,6 +42,8 @@ function getComputerChoice () {
 };
 
 function playRound () {
+    round += 1;
+    document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
     let playerSelection = this.id.toLowerCase();
     let computerSelection = getComputerChoice();
     let computerLower = computerSelection.toLowerCase();
@@ -63,8 +66,8 @@ function playRound () {
     else {
         document.querySelector('.winner').innerHTML = "IT'S A DRAW!";
     }
-    round += 1;
-    document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
+    // round += 1;
+    // document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
     document.querySelector('.player-score').innerHTML = `YOU: ${playerScore}`;
     document.querySelector('.computer-score').innerHTML = `COMPUTER: ${computerScore}`;
     continueGame();
