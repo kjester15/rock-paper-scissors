@@ -41,6 +41,12 @@ button {
     margin: 30px;
 }
 
+img {
+    flex: 0 1 auto;
+    height: 100px;
+    width: auto;
+}
+
 .computer, .winner, .game-over {
     align-self: center;
     margin: 5px;
