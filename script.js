@@ -50,8 +50,19 @@ function playRound () {
     let computerLower = computerSelection.toLowerCase();
     let compChoice = document.querySelector('.computer');
     document.querySelector('.computer').innerHTML = "COMPUTER'S CHOICE: ";
-    compChoice.append(computerSelection);
+    
+    // change computer's image to match it's random choice
+    if (computerLower == 'rock') {
+        document.getElementById('computer-image').src="img/rock.png";
+    }
+    else if (computerLower == 'paper') {
+        document.getElementById('computer-image').src="img/paper.png";
+    }
+    else {
+        document.getElementById('computer-image').src="img/scissors.png";
+    }
 
+    // display message based on win or loss for round and update score
     if ((playerSelection == "rock" && computerLower == "paper") || 
         (playerSelection == "paper" && computerLower == "scissors") || 
         (playerSelection == "scissors" && computerLower == "rock")) {
@@ -67,8 +78,8 @@ function playRound () {
     else {
         document.querySelector('.winner').innerHTML = "IT'S A DRAW!";
     }
-    // round += 1;
-    // document.querySelector('.rounds').innerHTML = `ROUND: ${round}`;
+
+    // update scores at top of screen
     document.querySelector('.player-score').innerHTML = `YOU: ${playerScore}`;
     document.querySelector('.computer-score').innerHTML = `COMPUTER: ${computerScore}`;
     continueGame();
