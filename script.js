@@ -24,6 +24,7 @@ function continueGame() {
             }
             document.querySelector('#refresh').style.fontSize = '25px';
             document.querySelector('#refresh').innerHTML = 'PLAY AGAIN?';
+            document.querySelector('#refresh').style.padding = '12px';
             return;
         }
     }
